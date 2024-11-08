@@ -14,6 +14,7 @@ import { MultiSelectModule } from "primeng/multiselect";
 import { InputTextareaModule } from "primeng/inputtextarea";
 import { InputTextModule } from "primeng/inputtext";
 import { PasswordModule } from "primeng/password";
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -32,7 +33,8 @@ import { PasswordModule } from "primeng/password";
 		MultiSelectModule,
 		PasswordModule,
 		InputTextareaModule,
-		InputTextModule
+		InputTextModule,
+    ReactiveFormsModule
   ],
   declarations: [EmpresaComponent]
 })

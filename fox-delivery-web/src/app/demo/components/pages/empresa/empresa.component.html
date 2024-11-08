@@ -4,16 +4,16 @@
         <div class="col-12 md:col-6">
             <div class="field mt-3">
                 <label for="inputtext">Nome Completo</label>
-                <input type="text" id="inputtext" pInputText class="ng-empresa ng-dirty">
+                <input type="text" id="inputtext" [(ngModel)]="nome" pInputText class="ng-empresa ng-dirty">
             </div>
             <div class="field">
                 <label for="autocomplete">CNPJ</label>
-                <p-autoComplete inputId="autocomplete" [(ngModel)]="value1" [suggestions]="filteredCountries" (completeMethod)="searchCountry($event)" field="name" class="ng-empresa ng-dirty"></p-autoComplete>
+                <p-autoComplete inputId="autocomplete" [(ngModel)]="cnpj" [suggestions]="filteredCountries" (completeMethod)="searchCountry($event)" field="name" class="ng-empresa ng-dirty"></p-autoComplete>
 
             </div>
             <div class="field">
-                <label for="chips">Nome Fantasia</label>
-                <p-chips inputId="chips" [(ngModel)]="value3" class="ng-empresa ng-dirty"></p-chips>
+                <label for="textarea">Nome Fantasia</label>
+                <textarea inputId="textarea" rows="3" cols="30" [(ngModel)]="nomefantasia" pInputTextarea class="ng-empresa ng-dirty"></textarea>
             </div>
         </div>
         
@@ -21,16 +21,16 @@
             
             <div class="field">
                 <label for="dropdown">Situação</label>
-                <p-dropdown inputId="dropdown" [autoDisplayFirst]="false" [options]="situacao" [(ngModel)]="value9" optionLabel="name" class="ng-empresa ng-dirty"></p-dropdown>
+                <p-dropdown inputId="dropdown" [autoDisplayFirst]="false" [options]="situacao" [(ngModel)]="idsituacao" optionLabel="name" class="ng-empresa ng-dirty"></p-dropdown>
             </div>
             
             <div class="field">
                 <label for="textarea">Motivo Bloqueio</label>
-                <textarea inputId="textarea" rows="3" cols="30" [(ngModel)]="value4" pInputTextarea class="ng-empresa ng-dirty"></textarea>
+                <textarea inputId="textarea" rows="3" cols="30" [(ngModel)]="motivobloqueio" pInputTextarea class="ng-empresa ng-dirty"></textarea>
             </div> 
         </div>
     </div>
-    <p-button label="Salvar" [raised]="true" class="col-12 md:col-6" />
+    <p-button label="Salvar"[raised]="true" (click)="adicionar()" class="col-12 md:col-6" />
     <p-button label="Voltar" [raised]="true"/>
 </div>
 
