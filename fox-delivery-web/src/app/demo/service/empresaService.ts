@@ -17,6 +17,8 @@ export class EmpresaService {
   }
 
   adicionar (empresa: Empresa): any {
+
+   debugger
   return this.http.post(`${ this.http }/Empresa`, empresa)
   .subscribe(
     resultado => {

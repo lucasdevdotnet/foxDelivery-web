@@ -55,22 +55,15 @@ export class EmpresaComponent implements OnInit {
     this.filteredCountries = filtered;
   }
   adicionar() {
-    debugger;
 
     this.postEmpresa = this.fb.group({
-      motivoBloqueio: ['', Validators.required],
-      dataAtualizacao: ['', Validators.required],
       ativo: [false],
-      cnpj: ['cnpj', [Validators.required, Validators.pattern(/^\d{14}$/)]], // Exemplo de validação para CNPJ
-      nomefantasia: ['', Validators.required],
-      nome: ['', Validators.required],
-      dataCadastro: ['', Validators.required],
     });
     if (this.postEmpresa.valid) {
       const formData = this.postEmpresa.value;
       console.log('Enviando dados do formulário:', formData);
     }
-
+debugger
     if (this.postEmpresa.valid) {
       this.empresaService.adicionar(this.postEmpresa.value).subscribe(
         response => {
