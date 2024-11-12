@@ -3,7 +3,7 @@
     <div class="grid p-fluid">
         <div class="col-12 md:col-6">
             <div class="field mt-3">
-                <label for="inputtext">Nome Completo</label>
+                <label for="inputtext">Nome Completo</label >
                 <input type="text" id="inputtext" [(ngModel)]="nome" pInputText class="ng-empresa ng-dirty">
             </div>
             <div class="field">
@@ -30,7 +30,7 @@
             </div> 
         </div>
     </div>
-    <p-button label="Salvar"[raised]="true" (click)="adicionar()" class="col-12 md:col-6" />
-    <p-button label="Voltar" [raised]="true"/>
+    <p-button  label="Salvar" icon="pi pi-save" [raised]="true" severity="success" (click)="adicionar()" class="col-19 md:col-6" />
+    <p-button label="Voltar" icon="pi pi-chevron-left" [raised]="true"severity="info"/>
 </div>
 

@@ -3,6 +3,8 @@ import { CountryService } from 'src/app/demo/service/country.service';
 import { EmpresaService } from 'src/app/demo/service/empresaService';
 import { Empresa } from 'src/app/demo/model/empresa';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { MenuItem } from 'primeng/api';
+
 @Component({
   selector: 'app-empresa',
   templateUrl: './empresa.component.html',
@@ -12,7 +14,7 @@ export class EmpresaComponent implements OnInit {
 
   postEmpresa: FormGroup;
 
-
+ 
   countries: any[] = [];
 
   situacao: any[];
@@ -23,6 +25,7 @@ export class EmpresaComponent implements OnInit {
   nomefantasia: string = '';
   motivobloqueio: string = '';
   filteredCountries: any[] = [];
+  items: MenuItem[] = [];
 
 
   constructor(private countryService: CountryService,private fb: FormBuilder, private empresaService: EmpresaService) {
@@ -75,7 +78,7 @@ debugger
         }
       );
     }
-
+    
   }
   // onSubmit() {
   //   debugger
