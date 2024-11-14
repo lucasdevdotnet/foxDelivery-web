@@ -5,7 +5,7 @@ import { Empresa } from '../model/empresa';
 
 @Injectable()
 export class EmpresaService {
-  
+  apiURL = 'https://localhost:44376/v1/api';
   constructor(private http: HttpClient) { }
 
 
@@ -19,7 +19,7 @@ export class EmpresaService {
   adicionar (empresa: Empresa): any {
 
    debugger
-  return this.http.post(`${ this.http }/Empresa`, empresa)
+  return this.http.post(`${this.apiURL }/Empresa`, empresa)
   .subscribe(
     resultado => {
       console.log(resultado)
