@@ -17,11 +17,12 @@ import { PasswordModule } from "primeng/password";
 import { ReactiveFormsModule } from '@angular/forms';
 
 
+
 @NgModule({
-  
-  imports: [
-    CommonModule,
-    EmpresaRoutingModule,
+
+	imports: [
+		CommonModule,
+		EmpresaRoutingModule,
 		FormsModule,
 		AutoCompleteModule,
 		CalendarModule,
@@ -34,8 +35,10 @@ import { ReactiveFormsModule } from '@angular/forms';
 		PasswordModule,
 		InputTextareaModule,
 		InputTextModule,
-    ReactiveFormsModule
-  ],
-  declarations: [EmpresaComponent]
+		ReactiveFormsModule,
+		
+	],
+	declarations: [EmpresaComponent]
+
 })
 export class EmpresaModule { }

@@ -4,16 +4,17 @@
         <div class="col-12 md:col-6">
             <div class="field mt-3">
                 <label for="inputtext">Nome Completo</label >
-                <input type="text" id="inputtext" [(ngModel)]="nome" pInputText class="ng-empresa ng-dirty">
+                <input type="text" id="inputtext" maxlength="80" (keypress)="allowOnlyText($event)"[(ngModel)]="nome" pInputText class="ng-empresa ng-dirty">
             </div>
             <div class="field">
                 <label for="autocomplete">CNPJ</label>
-                <p-autoComplete inputId="autocomplete" [(ngModel)]="cnpj" [suggestions]="filteredCountries" (completeMethod)="searchCountry($event)" field="name" class="ng-empresa ng-dirty"></p-autoComplete>
-
+                <p-autoComplete inputId="autocomplete" maxlength="14" (keypress)="onlyNumbers($event)" [(ngModel)]="cnpj" [suggestions]="filteredCountries" 
+                (completeMethod)="searchCountry($event)" field="name" class="ng-empresa ng-dirty" placeholder="00.000.000/0000-00">
+            </p-autoComplete>
             </div>
             <div class="field">
                 <label for="inputtext">Nome Fantasia</label>
-                <input type="text" id="inputtext"  [(ngModel)]="nomefantasia" pInputText class="ng-empresa ng-dirty">
+                <input type="text" id="inputtext" maxlength="80" (keypress)="allowOnlyText($event)" [(ngModel)]="nomefantasia" pInputText class="ng-empresa ng-dirty">
             </div>
         </div>
         
@@ -33,4 +34,7 @@
     <p-button  label="Salvar" icon="pi pi-save" [raised]="true" severity="success" (click)="adicionar()" class="col-19 md:col-6" />
     <p-button label="Voltar" icon="pi pi-chevron-left" [raised]="true"severity="info"/>
 </div>
+
+  
+    
 
