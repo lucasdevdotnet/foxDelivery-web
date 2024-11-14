@@ -4,11 +4,13 @@ import { EmpresaService } from 'src/app/demo/service/empresaService';
 import { Empresa } from 'src/app/demo/model/empresa';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MenuItem } from 'primeng/api';
+import { Directive, HostListener } from '@angular/core';
 
 @Component({
   selector: 'app-empresa',
   templateUrl: './empresa.component.html',
   styleUrl: './empresa.component.scss'
+  
 })
 export class EmpresaComponent implements OnInit {
 
@@ -42,6 +44,21 @@ export class EmpresaComponent implements OnInit {
     this.countryService.getCountries().then(countries => {
       this.countries = countries;
     });
+  }
+  allowOnlyText(event: KeyboardEvent) {
+    const charCode = event.charCode;
+    // Permite apenas letras (a-z e A-Z)
+    if ((charCode >= 48 && charCode <= 57)) {
+      event.preventDefault();
+    }
+  }
+  onlyNumbers(event: KeyboardEvent): boolean {
+    const charCode = event.charCode ? event.charCode : event.keyCode;
+    if (charCode < 48 || charCode > 57) {
+      event.preventDefault();
+      return false;
+    }
+    return true;
   }
 
   searchCountry(event: any) {
@@ -78,7 +95,7 @@ debugger
         }
       );
     }
-    
+  
   }
   // onSubmit() {
   //   debugger
